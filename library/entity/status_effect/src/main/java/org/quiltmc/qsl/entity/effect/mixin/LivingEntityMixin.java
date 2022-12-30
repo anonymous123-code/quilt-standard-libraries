@@ -138,15 +138,6 @@ public abstract class LivingEntityMixin extends Entity implements QuiltLivingEnt
 		return this.removeStatusEffect(type, StatusEffectRemovalReason.GENERIC_ONE);
 	}
 
-	/**
-	 * @author QuiltMC
-	 * @reason Adding removal reason
-	 */
-	@Overwrite
-	public boolean clearStatusEffects() {
-		return this.clearStatusEffects(StatusEffectRemovalReason.GENERIC_ALL) > 0;
-	}
-
 	@Redirect(method = "tickStatusEffects", at = @At(
 			value = "INVOKE",
 			target = "Lnet/minecraft/entity/LivingEntity;onStatusEffectRemoved(Lnet/minecraft/entity/effect/StatusEffectInstance;)V")
